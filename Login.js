@@ -27,10 +27,7 @@ export default class Login extends Component
           <Text style = {styles.title}>
             GREENIER LIFE
           </Text>
-          {/* <Image
-            style = {styles.logo}
-            source = {require('../assets/capanga.jpg')}
-          /> */}
+
           <TextInput 
             style = {styles.input}
             onChangeText = {text => this.state.name = text}
@@ -45,7 +42,13 @@ export default class Login extends Component
             style = {styles.loginButton}
             onPress = {() => {this.props.navigation.navigate('Home', {'name': this.state.name})}}
           >
-            <Text style = {styles.textButton}>Sign In</Text>
+            <Text style = {styles.loginTextButton}>Sign In</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style = {styles.registerButton}
+            onPress = {() => {this.props.navigation.navigate('Register')}}
+          >
+            <Text style = {{color: '#aaa'}}> Don't have an account? Click here </Text>
           </TouchableOpacity>
         </View>
     );
