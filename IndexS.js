@@ -35,9 +35,12 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       padding: 25
     },
-    textButton: {
+    loginTextButton: {
       color: '#FFF',
       fontSize: 25
+    },
+    registerButton: {
+      paddingTop: 10
     }
   })
 
