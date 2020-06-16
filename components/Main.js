@@ -10,15 +10,23 @@ import Home from './Home';
 import Profile from './Profile';
 import Store from './Store';
 
+const Tab = createMaterialBottomTabNavigator();
 export default class Main extends Component 
 {
   render()
   {
-    const Tab = createMaterialBottomTabNavigator();
+    /*
+    const { navigation } = this.props;
+    const username = navigation.getParam('name');
+    */
     return (
       <View style = {styles.container}>
         <NavigationContainer>
-          <Tab.Navigator>
+          <Tab.Navigator
+            activeColor = '#498A57'
+            inactiveColor = '#FFF'
+            barStyle = {{ backgroundColor: '#CCC' }}
+          >
             <Tab.Screen name = "Home" component = {Home} />
             <Tab.Screen name = "Perfil" component = {Profile} />
             <Tab.Screen name = "Loja" component = {Store} />
