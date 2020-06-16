@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {
     Text,
-    StyleSheet,
-    View 
+    View,
+    Image
 } from 'react-native';
+import styles from '../style/ProfileS';
 
 export default class Profile extends Component 
 {
@@ -12,25 +13,22 @@ export default class Profile extends Component
   {
     return (
       <View style = {styles.container}>
-        <Text style = {styles.text}>
-          Oi!!!
-        </Text>
-        <Text style = {styles.text}> 
-          Profile page
-        </Text>
+        <View style = {styles.picbox}>
+          <Image
+            source = {require('../assets/babuzada.png')} 
+            style = {{width: 75, height: 75, borderRadius: 75}}
+          />
+          <Text style = {styles.text}>
+            @SeuUsuario
+          </Text>
+        </View>
+        <View style = {styles.wardrobe}>
+          <Text style = {styles.text}>
+            Oi!!! Aqui vai ser o wardrobe
+          </Text>
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  text: {
-    fontSize: 20,
-    color: '#498A57' 
-  }
-});
