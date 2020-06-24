@@ -1,6 +1,6 @@
 # GREENIER LIFE
 Essa branch se trata dos testes com a tela de login, sendo criada primeiramente em 17/05.
-No dia 09/06, eu finalmente organizei essa branch, para ficar de acordo com o meu projeto no Expo. Criei a pasta **components**, que terá os principais arquivos do meu projeto e a pasta **styles**, que contém todos os estilos utilizados no meu projeto até agora.
+No dia 09/06, eu finalmente organizei essa branch, para ficar de acordo com o meu projeto no Expo. Criei a pasta **components**, que terá os principais arquivos do meu projeto e a pasta **styles**, que contém todos os estilos utilizados no meu projeto até agora. Existe também a **assets**, que contém as roupas dos usuários
 
 ## Components
 _Home_ -> Tela que aparece depois que o usuário loga, por enquanto vazia
