@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "greenier-life",
+    "slug": "snack-e536afc3-80b1-4c99-bd17-0a498d16f0f6",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "description": "Tela de login e register com botão que leva a uma tela principal, contendo tabs que levam à homepage, ao perfil do usuário e à loja."
+  }
+}

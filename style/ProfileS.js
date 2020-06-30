@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     height: 'auto',
     backgroundColor: '#FFF',
     borderColor: '#498A57',
-    borderWidth: 2,
+    borderWidth: 1,
     marginLeft: 10,
     marginBottom: 10,
     paddingBottom: 5,
@@ -33,6 +33,11 @@ const styles = StyleSheet.create({
    clothesPic: {
     width: 100, 
     height: 100
+   },
+   inactiveClothesPic: {
+     height: 100,
+     width: 100,
+     opacity: 0.5
    },
    header: {
     marginTop: 30,
@@ -50,16 +55,23 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
    },
-   userMoney: {
-     color: '#CCAA00'
-   },
-   wearButton: {
+  userMoney: {
+    color: '#CCAA00'
+  } ,
+  wearButton: {
     backgroundColor: '#B2DF8A',
     marginTop: 5, 
     borderRadius: 50,
     paddingLeft: 30,
     paddingRight: 30
-   }
+   },
+  inactiveWearButton: {
+    backgroundColor: '#CCC',
+    marginTop: 5, 
+    borderRadius: 50,
+    paddingLeft: 30,
+    paddingRight: 30
+  }
 });
 
 export default styles;

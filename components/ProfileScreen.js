@@ -10,29 +10,22 @@ import {
     Button
 } from 'react-native';
 import styles from '../style/ProfileS';
+import ImageOverlay from "react-native-image-overlay";
 
 export default class Profile extends Component 
 {
   
-  pictures = [
-    {
-      specificKey: '001',
-      picUrl: require('../assets/pogchamp.jpg')
-    },
-    {
-      specificKey: '002',
-      picUrl: require('../assets/sucao.jpg')
-    },
-  ];
-
   state = {
-    pfp: '../assets/bloodtrail.jpg',
-    imagePreviewVisible: false,
-    boughtPicUrl: ''
+    skinToneUrl: '../assets/00.png',
+    hairUrl: '../assets/05.png',
+    boughtPicUrl: '',
+    backgroundUrl: '../assets/15.png',
+    clothesUrl: '../assets/16.png'
   };
 
-  picBox(keyPicName){
-    const picToBeShown = '../assets/' + keyPicName + '.jpg';
+  picBox(keyPicName)
+  {
+    const picToBeShown = '../assets/' + keyPicName + '.png';
     return(
       <View style = {styles.clothesBox}>
         <Image
@@ -42,7 +35,7 @@ export default class Profile extends Component
         <TouchableOpacity
           onPress = {() => {
             this.setState({
-              pfp: picToBeShown
+              skinToneUrl: picToBeShown
             })
           }}
           style = {styles.wearButton}
@@ -52,7 +45,37 @@ export default class Profile extends Component
       </View>
     )
   }
-  getData = async () => {
+  frioCalculista(inactivePicUrl)
+  {
+    if(inactivePicUrl == this.state.boughtPicUrl) {
+      <View style = {styles.clothesBox}>
+        <Image
+          source = {require('../assets/06.png')} 
+          style = {styles.clothesPic}
+        />
+        <TouchableOpacity
+          style = {styles.wearButton}
+        >
+          <Text> Usar </Text>
+        </TouchableOpacity> 
+      </View>
+    }
+    else {
+      <View style = {styles.clothesBox}>
+        <Image
+          source = {require('../assets/06.png')} 
+          style = {styles.inactiveClothesPic}
+        />
+        <TouchableOpacity
+          style = {styles.inactiveWearButton}
+        >
+          <Text> Usar </Text>
+        </TouchableOpacity> 
+      </View>
+    }
+  }
+  getData = async () =>
+  {
     try {
       const rawObjectBoughtPic = await AsyncStorage.getItem('skins');
       const objectBoughtPic = JSON.parse(rawObjectBoughtPic);
@@ -61,7 +84,7 @@ export default class Profile extends Component
         this.setState({
           boughtPicUrl: boughtPic
         });
-        alert(this.state.boughtPicUrl);
+        alert(this.state.boughtPicUrl)
       }else 
         alert("vazio")
     } catch (err) {
@@ -72,53 +95,39 @@ export default class Profile extends Component
   {
     return (
       <View style = {styles.masterContainer}>
-        <View>
-          {this.state.imagePreviewVisible ? (
-            <Image
-              style = {{width: 75, height: 75}}
-              source = {require('../assets/pogchamp.jpg')} 
-            />
-          ): null}
-        </View>
-        <View>
-          {this.state.imagePreviewVisible ? (
-            <Image
-              style = {{width: 75, height: 75}}
-              source = {require('../assets/sergio.jpg')} 
-            />
-          ): null}
-        </View>
-        <View>
-          {this.state.imagePreviewVisible ? (
-            <Image
-              style = {{width: 75, height: 75}}
-              source = {require('../assets/sucao.jpg')} 
-            />
-          ): null}
-        </View>
-        <View>
-          {this.state.imagePreviewVisible ? (
-            <Image
-              style = {{width: 75, height: 75}}
-              source = {require('../assets/twitter.jpg')} 
-            />
-          ): null}
-        </View>
-
         <View style = {styles.header}>
           <Text style = {styles.title}> Perfil </Text>
         </View>
         <View style = {styles.pfpBox}>
-          <TouchableOpacity                 
+          <TouchableOpacity
             onPress = {() => {
-            this.getData();
-          }}>
-          <Text>extreme measures</Text>
+              this.getData()
+            }}
+          >
+            <Text>pedro is back</Text>
           </TouchableOpacity>
-          <Image
-            source = {require(this.state.pfp)} 
-            style = {{width: 75, height: 75, borderRadius: 75}}
-          />
+          <ImageOverlay
+            source = {require(this.state.backgroundUrl)} 
+            containerStyle = {{width: 75, height: 75}}
+            overlayAlpha = {0}
+          >
+            <ImageOverlay
+              source = {require(this.state.skinToneUrl)}
+              containerStyle = {{width: 75, height: 75, borderRadius: 75}}
+              overlayAlpha = {0}
+            >
+              <ImageOverlay
+                source = {require(this.state.clothesUrl)}
+                containerStyle = {{width: 75, height: 75}}
+                overlayAlpha = {0}
+              >
+                <Image
+                  source = {require(this.state.hairUrl)}
+                  style = {{width: 75, height: 75}}
+                />
+              </ImageOverlay>
+            </ImageOverlay>
+          </ImageOverlay>
           <Text style = {styles.username}>
             @SeuUsuario
           </Text>
@@ -129,15 +138,119 @@ export default class Profile extends Component
 
         <ScrollView style = {styles.wardrobeContainer}>
           <View style = {styles.wardrobeColumn}>
+              <View style = {styles.clothesBox}>
+                <Image
+                  source = {require('../assets/00.png')} 
+                  style = {styles.clothesPic}
+                />
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      skinToneUrl: '../assets/00.png'
+                    })
+                  }}
+                  style = {styles.wearButton}
+                >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
             <View style = {styles.clothesBox}>
               <Image
-                source = {require('../assets/capanga.jpg')} 
+                source = {require('../assets/01.png')} 
                 style = {styles.clothesPic}
               />
               <TouchableOpacity
                 onPress = {() => {
                   this.setState({
-                    pfp: '../assets/capanga.jpg'
+                    skinToneUrl: '../assets/01.png'
+                  })
+                }}
+                style = {styles.wearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style = {styles.wardrobeColumn}>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/02.png')} 
+                style = {styles.clothesPic}
+              /> 
+              <TouchableOpacity
+                onPress = {() => {
+                  this.setState({
+                    skinToneUrl: '../assets/02.png'
+                  })
+                }}
+                style = {styles.wearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity>
+            </View>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/03.png')} 
+                style = {styles.clothesPic}
+              />
+              <TouchableOpacity
+                onPress = {() => {
+                  this.setState({
+                    skinToneUrl: '../assets/03.png'
+                  })
+                }}
+                style = {styles.wearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
+          </View>
+          <View style = {styles.wardrobeColumn}>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/04.png')} 
+                style = {styles.clothesPic}
+              /> 
+              <TouchableOpacity
+                onPress = {() => {
+                  this.setState({
+                    hairUrl: '../assets/04.png'
+                  })
+                }}
+                style = {styles.wearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity>
+            </View>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/05.png')} 
+                style = {styles.clothesPic}
+              />
+              <TouchableOpacity
+                onPress = {() => {
+                  this.setState({
+                    hairUrl: '../assets/05.png'
+                  })
+                }}
+                style = {styles.wearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
+          </View>
+          
+          <View style = {styles.wardrobeColumn}>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/06.png')} 
+                style = {styles.clothesPic}
+              />
+              <TouchableOpacity
+                onPress = {() => {
+                  this.setState({
+                    hairUrl: '../assets/06.png'
                   })
                 }}
                 style = {styles.wearButton}
@@ -147,13 +260,38 @@ export default class Profile extends Component
             </View>
             <View style = {styles.clothesBox}>
               <Image
-                source = {require('../assets/aaaaaa.jpg')} 
+                source = {require('../assets/07.png')} 
+                style = {styles.inactiveClothesPic}
+              />
+              <TouchableOpacity
+                style = {styles.inactiveWearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style = {styles.wardrobeColumn}>
+              <View style = {styles.clothesBox}>
+                <Image
+                  source = {require('../assets/08.png')} 
+                  style = {styles.inactiveClothesPic}
+                />
+                <TouchableOpacity
+                  style = {styles.inactiveWearButton}
+                >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/09.png')} 
                 style = {styles.clothesPic}
               />
               <TouchableOpacity
                 onPress = {() => {
                   this.setState({
-                    pfp: '../assets/aaaaaa.jpg'
+                    hairUrl: '../assets/09.png',
                   })
                 }}
                 style = {styles.wearButton}
@@ -162,76 +300,135 @@ export default class Profile extends Component
               </TouchableOpacity>
             </View>
           </View>
+
           <View style = {styles.wardrobeColumn}>
+              <View style = {styles.clothesBox}>
+                <Image
+                  source = {require('../assets/10.png')} 
+                  style = {styles.inactiveClothesPic}
+                />
+                <TouchableOpacity
+                  style = {styles.inactiveWearButton}
+                >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
             <View style = {styles.clothesBox}>
               <Image
-                source = {require('../assets/bloodtrail.jpg')} 
-                style = {styles.clothesPic}
-              /> 
+                source = {require('../assets/11.png')} 
+                style = {styles.inactiveClothesPic}
+              />
               <TouchableOpacity
-                onPress = {() => {
-                  this.setState({
-                    pfp: '../assets/bloodtrail.jpg'
-                  })
-                }}
-                style = {styles.wearButton}
+                style = {styles.inactiveWearButton}
               >
                 <Text> Usar </Text>
               </TouchableOpacity>
             </View>
+          </View>
+
+          <View style = {styles.wardrobeColumn}>
+              <View style = {styles.clothesBox}>
+                <Image
+                  source = {require('../assets/12.png')} 
+                  style = {styles.clothesPic}
+                />
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      hairUrl: '../assets/12.png'
+                    })
+                  }}
+                  style = {styles.wearButton}
+                >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
             <View style = {styles.clothesBox}>
               <Image
-                source = {require('../assets/duraes.jpg')} 
-                style = {styles.clothesPic}
+                source = {require('../assets/13.png')} 
+                style = {styles.inactiveClothesPic}
               />
               <TouchableOpacity
-                onPress = {() => {
-                  this.setState({
-                    pfp: '../assets/duraes.jpg'
-                  })
-                }}
-                style = {styles.wearButton}
+                style = {styles.inactiveWearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style = {styles.wardrobeColumn}>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/14.png')} 
+                style = {styles.inactiveClothesPic}
+              />
+              <TouchableOpacity
+                style = {styles.inactiveWearButton}
+              >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
+            <View style = {styles.clothesBox}>
+              <Image
+                  source = {require('../assets/15.png')} 
+                  style = {styles.clothesPic}
+                />
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      backgroundUrl: '../assets/15.png'
+                    })
+                  }}
+                  style = {styles.wearButton}
+                >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
+          </View>
+
+          <View style = {styles.wardrobeColumn}>
+              <View style = {styles.clothesBox}>
+                <Image
+                  source = {require('../assets/16.png')} 
+                  style = {styles.clothesPic}
+                />
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      clothesUrl: '../assets/16.png'
+                    })
+                  }}
+                  style = {styles.wearButton}
+                >
+                <Text> Usar </Text>
+              </TouchableOpacity> 
+            </View>
+            <View style = {styles.clothesBox}>
+              <Image
+                source = {require('../assets/17.png')} 
+                style = {styles.inactiveClothesPic}
+              />
+              <TouchableOpacity
+                style = {styles.inactiveWearButton}
               >
                 <Text> Usar </Text>
               </TouchableOpacity> 
             </View>
           </View>
           <View style = {styles.wardrobeColumn}>
-            <View style = {styles.clothesBox}>
-              <Image
-                source = {require('../assets/capanga.jpg')} 
-                style = {styles.clothesPic}
-              /> 
-              <TouchableOpacity
-                onPress = {() => {
-                  this.setState({
-                    pfp: '../assets/capanga.jpg'
-                  })
-                }}
-                style = {styles.wearButton}
-              >
-                <Text> Usar </Text>
-              </TouchableOpacity>
-            </View>
-            <View style = {styles.clothesBox}>
-              <Image
-                source = {require('../assets/capanga.jpg')} 
-                style = {styles.clothesPic}
+              <View style = {styles.clothesBox}>
+                <Image
+                source = {require('../assets/18.png')} 
+                style = {styles.inactiveClothesPic}
               />
               <TouchableOpacity
-                onPress = {() => {
-                  this.setState({
-                    pfp: '../assets/capanga.jpg'
-                  })
-                }}
-                style = {styles.wearButton}
+                style = {styles.inactiveWearButton}
               >
                 <Text> Usar </Text>
               </TouchableOpacity> 
             </View>
           </View>
         </ScrollView>
-        
       </View>
     );
   }

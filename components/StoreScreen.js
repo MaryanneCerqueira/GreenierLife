@@ -22,100 +22,193 @@ export default class StoreScreen extends Component
   render()
   {
     return (
-      <ScrollView style = {styles.masterContainer}>
+      <View style = {{flex: 1, backgroundColor: '#FFF'}}>
         <View style = {styles.header}>
-          <Text style = {styles.title}> Loja </Text>
+            <Text style = {styles.title}> Loja </Text>
         </View>
-
-        <View style = {styles.container}>
-          <View style = {styles.clothesBox}>
-            <Image 
-              source = {require('../assets/pogchamp.jpg')}
-              style = {styles.clothesPic}
-            />
-            <Text style = {styles.clothesPrice}> 10 greenies </Text>
-            <TouchableOpacity
-              onPress = {() => {
-                this.setState({
-                  picUrl: '../assets/pogchamp.jpg',
-                  key: 'skins'
-                });
-                const currentKey = this.state.key;
-                const stringState = JSON.stringify(this.state);
-                this.setData(currentKey, stringState);
-              }}
-              style = {styles.buyButton}>
-              <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
-            </TouchableOpacity>
-            </View>
-            <View style = {styles.clothesBox}>
-              <Image 
-                source = {require('../assets/twitter.jpg')}
-                style = {styles.clothesPic}
-              />
-              <Text style = {styles.clothesPrice}> 10 greenies </Text>
-              <TouchableOpacity
-                onPress = {() => {
-                  this.setState({
-                    picUrl: '../assets/twitter.jpg',
-                    key: 'skins'
-                  });
-                  const currentKey = this.state.key;
-                  const stringState = JSON.stringify(this.state);
-                  this.setData(currentKey, stringState);
-                }}
-                style = {styles.buyButton}
-              >
-                <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
+        <ScrollView style = {styles.masterContainer}>
           <View style = {styles.container}>
             <View style = {styles.clothesBox}>
               <Image 
-                source = {require('../assets/sucao.jpg')}
+                source = {require('../assets/07.png')}
                 style = {styles.clothesPic}
               />
               <Text style = {styles.clothesPrice}> 10 greenies </Text>
               <TouchableOpacity
                 onPress = {() => {
                   this.setState({
-                    picUrl: '../assets/sucao.jpg',
+                    picUrl: '../assets/07.png',
                     key: 'skins'
                   });
                   const currentKey = this.state.key;
                   const stringState = JSON.stringify(this.state);
                   this.setData(currentKey, stringState);
                 }}
-                style = {styles.buyButton}
-              >
+                style = {styles.buyButton}>
                 <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
               </TouchableOpacity>
+              </View>
+              
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/08.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/08.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style = {styles.clothesBox}>
-              <Image 
-                source = {require('../assets/sergio.jpg')}
-                style = {styles.clothesPic}
-              />
-              <Text style = {styles.clothesPrice}> 10 greenies </Text>
-              <TouchableOpacity
-                onPress = {() => {
-                  this.setState({
-                    picUrl: '../assets/sergio.jpg',
-                    key: 'skins'
-                  });
-                  const currentKey = this.state.key;
-                  const stringState = JSON.stringify(this.state);
-                  this.setData(currentKey, stringState);
-                }}
-                style = {styles.buyButton}
-              >
-                <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
-              </TouchableOpacity>
+
+            <View style = {styles.container}>
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/10.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/10.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/11.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/11.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-      </ScrollView>
+
+            <View style = {styles.container}>
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/13.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/13.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/14.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/14.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            <View style = {styles.container}>
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/17.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/17.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
+
+              <View style = {styles.clothesBox}>
+                <Image 
+                  source = {require('../assets/18.png')}
+                  style = {styles.clothesPic}
+                />
+                <Text style = {styles.clothesPrice}> 10 greenies </Text>
+                <TouchableOpacity
+                  onPress = {() => {
+                    this.setState({
+                      picUrl: '../assets/18.png',
+                      key: 'skins'
+                    });
+                    const currentKey = this.state.key;
+                    const stringState = JSON.stringify(this.state);
+                    this.setData(currentKey, stringState);
+                  }}
+                  style = {styles.buyButton}
+                >
+                  <Text style = {{color: '#4E4E4E'}}> Comprar </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+        </ScrollView>
+      </View>
     );
   }
 }
