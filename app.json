@@ -1,14 +1,15 @@
 {
   "expo": {
     "name": "greenier-life",
-    "slug": "snack-e536afc3-80b1-4c99-bd17-0a498d16f0f6",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "slug": "greenier-life",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -18,6 +19,8 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "Tela de login e register com botão que leva a uma tela principal, contendo tabs que levam à homepage, ao perfil do usuário e à loja."
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
   }
 }
