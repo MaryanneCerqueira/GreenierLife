@@ -3,21 +3,21 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   masterContainer: {
     backgroundColor: '#fff',
-    flex: 1
+    flex: 1,
   },
   wardrobeColumn: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   pfpBox: {
     paddingTop: 30,
     height: 150,
-    alignItems: 'center', 
-    marginBottom: 1
+    alignItems: 'center',
+    marginBottom: 1,
   },
   username: {
-    color: '#498A57'
+    color: '#498A57',
   },
   clothesBox: {
     width: 150,
@@ -28,18 +28,18 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginBottom: 10,
     paddingBottom: 5,
-    alignItems: 'center'
-   },
-   clothesPic: {
-    width: 100, 
-    height: 100
-   },
-   inactiveClothesPic: {
-     height: 100,
-     width: 100,
-     opacity: 0.5
-   },
-   header: {
+    alignItems: 'center',
+  },
+  activeClothesPic: {
+    width: 100,
+    height: 100,
+  },
+  inactiveClothesPic: {
+    height: 100,
+    width: 100,
+    opacity: 0.5,
+  },
+  header: {
     marginTop: 30,
     height: 60,
     padding: 10,
@@ -47,31 +47,31 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2.5,
     borderBottomColor: '#86C54E',
     paddingBottom: 1,
-    marginBottom: 1
-   },
-   title: {
+    marginBottom: 1,
+  },
+  title: {
     textAlign: 'center',
     color: '#4E4E4E',
     fontSize: 25,
     fontWeight: 'bold',
-   },
+  },
   userMoney: {
-    color: '#CCAA00'
-  } ,
-  wearButton: {
+    color: '#CCAA00',
+  },
+  activeWearButton: {
     backgroundColor: '#B2DF8A',
-    marginTop: 5, 
+    marginTop: 5,
     borderRadius: 50,
     paddingLeft: 30,
-    paddingRight: 30
-   },
+    paddingRight: 30,
+  },
   inactiveWearButton: {
     backgroundColor: '#CCC',
-    marginTop: 5, 
+    marginTop: 5,
     borderRadius: 50,
     paddingLeft: 30,
-    paddingRight: 30
-  }
+    paddingRight: 30,
+  },
 });
 
 export default styles;

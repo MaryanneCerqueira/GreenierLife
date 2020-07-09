@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions } from 'react-native';
 const screenWidth = Math.round(Dimensions.get('window').width);
 const styles = StyleSheet.create({
   header: {

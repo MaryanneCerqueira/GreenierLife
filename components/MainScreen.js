@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomepageScreen from './HomepageScreen';
 import ProfileScreen from './ProfileScreen';
 import StoreScreen from './StoreScreen';
+import TrackerScreen from './TrackerScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 export default class MainScreen extends Component 
@@ -28,6 +29,7 @@ export default class MainScreen extends Component
             barStyle = {{ backgroundColor: '#FFF' }}
           >
             <Tab.Screen name = "Home" component = {HomepageScreen} />
+            <Tab.Screen name = "Tracker" component = {TrackerScreen} />
             <Tab.Screen name = "Perfil" component = {ProfileScreen} />
             <Tab.Screen name = "Loja" component = {StoreScreen} />
           </Tab.Navigator>
